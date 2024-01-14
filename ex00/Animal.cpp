@@ -6,14 +6,20 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 14:34:42 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/13 15:49:07 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/14 16:27:09 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+
 #include "Animal.hpp"
 
-Animal::Animal(): type(""){
+Animal::Animal(): type("Animal"){
     std::cout << "base Contructor called" << std::endl;
+}
+
+void Animal::setType(std::string typ){
+    type = typ;
 }
 
 std::string Animal::getType() const{
@@ -22,14 +28,6 @@ std::string Animal::getType() const{
 
 void Animal::makeSound() const{
     std::cout << "base function" << std::endl;
-}
-
-std::string Cat::getType() const{
-    return type;
-}
-
-std::string Dog::getType() const{
-    return type;
 }
 
 Animal::~Animal(){
@@ -50,35 +48,6 @@ Animal::Animal(const Animal& obj){
     type = obj.type;
 }
 
-Cat::Cat(){
-    std::cout << "Cat Contructor called" << std::endl;
-}
 
-Cat::Cat(std::string tp): Animal(tp){
-    std::cout << "Cat param Contructor called" << std::endl;
-}
-
-Cat::~Cat(){
-    std::cout << "Dog Destructor called" << std::endl;
-}
-
-void Cat::makeSound() const{
-    std::cout << "Cat called" << std::endl;
-}
   
 
-Dog::Dog(std::string tp): Animal(tp){
-    std::cout << "Dog param Contructor called" << std::endl;
-}
-
-Dog::Dog(){
-    std::cout << "Cat Destructor called" << std::endl;
-}
-
-Dog::~Dog(){
-    std::cout << "Cat Destructor called" << std::endl;
-}
-
-void Dog::makeSound() const{
-    std::cout << "Dog called" << std::endl;
-}
