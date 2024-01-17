@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 14:34:57 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/15 22:39:32 by yamajid          ###   ########.fr       */
+/*   Created: 2024/01/14 16:22:18 by yamajid           #+#    #+#             */
+/*   Updated: 2024/01/14 18:45:11 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Animal{
-    protected:
-        std::string type;
+class Dog: public Animal{
+    private:
+        Brain *br;
     public:
-        Animal();
-        Animal(std::string tp);
-        Animal(const Animal& other);
-        Animal& operator=(const Animal& obj);
-        virtual ~Animal();
-        virtual void makeSound() const;
-        std::string getType() const;
-        void setType(std::string typ);
+        Dog();
+        Dog(const Dog& other);
+        Dog& operator=(const Dog& obj);
+        ~Dog();
+        Dog(std::string type);
+        void makeSound() const;
 };

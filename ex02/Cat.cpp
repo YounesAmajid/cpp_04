@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 16:22:13 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 12:06:39 by yamajid          ###   ########.fr       */
+/*   Created: 2024/01/14 16:22:06 by yamajid           #+#    #+#             */
+/*   Updated: 2024/01/15 12:48:13 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(std::string tp): Animal(tp){
-    std::cout << "Dog param Contructor called" << std::endl;
-}
 
-Dog::Dog(){
-    std::cout << "Dog Destructor called" << std::endl;
-}
-
-Dog::~Dog(){
-    std::cout << "Dog Destructor called" << std::endl;
-}
-
-Dog::Dog(const Dog& other){
-    type = other.type;
-}
-Dog& Dog::operator=(const Dog& obj){
-    if (this != &obj)
-        type = obj.type;
+Cat& Cat::operator=(const Cat& other){
+    if (this != &other)
+        br = other.br;
     return *this;
+}       
+
+Cat::Cat(): br(new Brain){
+    std::cout << "Cat Contructor called" << std::endl;
 }
 
-void Dog::makeSound() const{
-    std::cout << "Dog called" << std::endl;
+Cat::Cat(std::string tp): Animal(tp){
+    std::cout << "Cat param Contructor called" << std::endl;
+}
+
+Cat::~Cat(){
+    delete br;
+    std::cout << "Dog Destructor called" << std::endl;
+}
+
+void Cat::makeSound() const{
+    std::cout << "Cat called" << std::endl;
 }

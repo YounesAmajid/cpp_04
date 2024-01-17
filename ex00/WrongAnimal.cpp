@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 18:02:19 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/14 18:27:28 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/15 10:01:11 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ WrongAnimal::WrongAnimal(){
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& other){
+    (void)other;
     std::cout << "WrongAnimal copy constructor called" << std::endl;
 }
 
@@ -25,9 +26,15 @@ WrongAnimal::~WrongAnimal(){
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& obj){
+    (void)obj;
     std::cout << "WrongAnimal copy assignemnt operator called" << std::endl;
+    return *this;
 }
 
 void WrongAnimal::makeSound() const{
     std::cout << "WrongAnimal Called" << std::endl;
+}
+
+std::string WrongAnimal::getType() const {
+    return type;
 }

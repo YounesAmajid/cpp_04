@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 16:22:13 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 12:06:39 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/14 18:47:22 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,17 @@ Dog::Dog(std::string tp): Animal(tp){
     std::cout << "Dog param Contructor called" << std::endl;
 }
 
-Dog::Dog(){
-    std::cout << "Dog Destructor called" << std::endl;
+Dog::Dog(): br(new Brain){
+    std::cout << "Cat Destructor called" << std::endl;
 }
 
 Dog::~Dog(){
-    std::cout << "Dog Destructor called" << std::endl;
+    delete br;
+    std::cout << "Cat Destructor called" << std::endl;
+}
+
+void Dog::makeSound() const{
+    std::cout << "Dog called" << std::endl;
 }
 
 Dog::Dog(const Dog& other){
@@ -31,8 +36,4 @@ Dog& Dog::operator=(const Dog& obj){
     if (this != &obj)
         type = obj.type;
     return *this;
-}
-
-void Dog::makeSound() const{
-    std::cout << "Dog called" << std::endl;
 }

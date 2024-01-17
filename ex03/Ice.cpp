@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 16:22:06 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 12:09:00 by yamajid          ###   ########.fr       */
+/*   Created: 2024/01/15 21:08:37 by yamajid           #+#    #+#             */
+/*   Updated: 2024/01/17 11:16:00 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Ice.hpp"
 
-
-Cat::Cat(){
-    std::cout << "Cat Contructor called" << std::endl;
+Ice::Ice(): AMateria("ice"){
 }
 
-Cat::Cat(std::string tp): Animal(tp){
-    std::cout << "Cat param Contructor called" << std::endl;
+Ice::~Ice(){
 }
 
-Cat::Cat(const Cat& other){
-    type = other.type;
+Ice::Ice(const Ice& obj){
+    this->type = obj.type;
 }
 
-Cat& Cat::operator=(const Cat& other){
+Ice& Ice::operator=(const Ice& other){
     if (this != &other)
-        this->type = other.type;
+        type = other.type;
     return *this;
 }
 
-Cat::~Cat(){
-    std::cout << "Dog Destructor called" << std::endl;
+Ice* Ice::clone() const{
+    return new Ice();
 }
-
-void Cat::makeSound() const{
-    std::cout << "Cat called" << std::endl;
+void Ice::use(ICharacter& target){
+    std::cout << "Ice: *shoots an ice bolt at " << target.getName() << "*" << std::endl;
+}
+std::string const & Ice::getType() const 
+{
+    return (this->type);
 }

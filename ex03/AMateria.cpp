@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 16:22:06 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 12:09:00 by yamajid          ###   ########.fr       */
+/*   Created: 2024/01/17 10:17:49 by yamajid           #+#    #+#             */
+/*   Updated: 2024/01/17 11:14:01 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
 
-
-Cat::Cat(){
-    std::cout << "Cat Contructor called" << std::endl;
+#include "AMateria.hpp"
+#include "Character.hpp"
+AMateria::AMateria(){
+    
 }
 
-Cat::Cat(std::string tp): Animal(tp){
-    std::cout << "Cat param Contructor called" << std::endl;
+AMateria::AMateria(std::string const & tp): type(tp){
+    
 }
 
-Cat::Cat(const Cat& other){
-    type = other.type;
+AMateria::AMateria(const AMateria& obj){
+    this->type = obj.type;
 }
 
-Cat& Cat::operator=(const Cat& other){
+AMateria& AMateria::operator=(const AMateria& other){
     if (this != &other)
         this->type = other.type;
     return *this;
 }
-
-Cat::~Cat(){
-    std::cout << "Dog Destructor called" << std::endl;
+AMateria::~AMateria(){
+        
+}
+std::string const & AMateria::getType() const{
+    return type;
 }
 
-void Cat::makeSound() const{
-    std::cout << "Cat called" << std::endl;
+void AMateria::use(ICharacter& target){
+    std::cout << "The AMateria " << type << " is used on "<< target.getName() << std::endl;
 }
