@@ -6,16 +6,16 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 16:22:27 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 13:03:24 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 14:04:08 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat: public Animal{
+class Cat: public AAnimal{
     private:
         Brain *br;
         Brain *keep;

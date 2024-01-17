@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 14:34:57 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 13:01:04 by yamajid          ###   ########.fr       */
+/*   Created: 2024/01/17 14:04:51 by yamajid           #+#    #+#             */
+/*   Updated: 2024/01/17 14:24:16 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "AAnimal.hpp"
 
-#include <iostream>
+AAnimal::AAnimal(){
+    
+}
 
-class Animal{
-    protected:
-        std::string type;
-    public:
-        virtual void makeSound() const = 0;
-        virtual std::string getType() const = 0;
-        virtual void setType(std::string typ) = 0;
-};
+AAnimal::~AAnimal(){
+    
+}
+
+AAnimal&  AAnimal::operator=(const AAnimal& other){
+    if (this != &other)
+        this->type = other.type;
+    return *this;
+}
+
+AAnimal::AAnimal(const AAnimal& obj){
+    this->type = obj.type;
+}
+
+const std::string& AAnimal::getType() const {
+    return type;
+}
+
+void AAnimal::setType(std::string typ){
+    type = typ;
+}

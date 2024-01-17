@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 14:34:42 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 12:39:37 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 14:12:49 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ Animal::~Animal(){
     std::cout << "Animal Destructor called" << std::endl;
 }
 
-void Animal::setType(std::string typ){
+void Animal::setType(std::string& typ){
     type = typ;
 }
 
-std::string Animal::getType() const{
+const std::string& Animal::getType() const{
     return type;
 }
 

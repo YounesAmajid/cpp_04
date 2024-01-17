@@ -6,13 +6,13 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 18:39:01 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 13:01:27 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 13:51:04 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 class Brain{
     protected:

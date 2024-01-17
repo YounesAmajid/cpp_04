@@ -6,7 +6,7 @@
 #    By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 14:33:33 by yamajid           #+#    #+#              #
-#    Updated: 2024/01/17 13:04:53 by yamajid          ###   ########.fr        #
+#    Updated: 2024/01/17 14:24:04 by yamajid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ Run		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -f
 
-SRCS 	=	Cat.cpp Dog.cpp Brain.cpp main.cpp
+SRCS 	=	Cat.cpp Dog.cpp Brain.cpp AAnimal.cpp main.cpp
 
 otherS = $(SRCS:.cpp=.o)
 
@@ -24,7 +24,7 @@ all: $(NAME)
 $(NAME): $(otherS)
 	$(Run) $(FLAGS) -o $(NAME) $(otherS)
 
-%.o:  %.cpp Animal.hpp Dog.hpp Cat.hpp Brain.hpp
+%.o:  %.cpp AAnimal.hpp Dog.hpp Cat.hpp Brain.hpp
 	$(Run) $(FLAGS) -c $< -o $@
 
 clean:
