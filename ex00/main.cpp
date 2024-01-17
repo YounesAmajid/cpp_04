@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 14:33:44 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/15 10:15:16 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 12:34:12 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,16 @@
 
 int main()
 {
-    
-const WrongAnimal* meta = new WrongAnimal();
-// const WrongAnimal* j = new Dog();
-const WrongAnimal* i = new WrongCat();
-// std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-// j->makeSound();
-meta->makeSound();
-delete meta;
-// delete j;
-delete i;
-return 0;
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); //will output the cat sound!
+    j->makeSound();
+    meta->makeSound();
+    delete meta;
+    delete j;
+    delete i;
+    return 0;
 }
