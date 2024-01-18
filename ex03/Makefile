@@ -6,12 +6,12 @@
 #    By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 20:54:19 by yamajid           #+#    #+#              #
-#    Updated: 2024/01/17 14:30:07 by yamajid          ###   ########.fr        #
+#    Updated: 2024/01/17 15:54:52 by yamajid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 	=	AMateria
-Run		=	c++
+Run		=	c++ -g
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -f
 

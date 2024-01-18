@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 17:56:20 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 11:14:53 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 16:39:06 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,12 @@ MateriaSource::~MateriaSource(){
     {
         delete src[i];
     }
-    delete unequipedMate;
 }
 MateriaSource& MateriaSource::operator=(const MateriaSource& other){
     if (this != &other){
         for (size_t i = 0; i < 4; i++)
         {
-            if (this->src[i])
-                delete this->src[i];
-            this->src[i] = NULL;
-        } 
-        for (size_t i = 0; i < 4; i++)
-        {
+            delete this->src[i];
             if(other.src[i])
                 this->src[i] = other.src[i]->clone();
             else 
@@ -44,13 +38,9 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other){
 }
 
 MateriaSource::MateriaSource(const MateriaSource& obj){
-    for (size_t i = 0; i < 4; i++){
-        if (this->src[i]){   
-            unequipedMate = this->src[i];
-            this->src[i] = obj.src[i];
-        }
-    }
-    
+    for (int i = 0; i < 4; i++)
+        this->src[i] = NULL;
+    *this = obj;
 }
 
 void MateriaSource::learnMateria(AMateria* amate){
@@ -63,6 +53,7 @@ void MateriaSource::learnMateria(AMateria* amate){
             return ;
         }
     }
+    delete amate;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type){

@@ -6,13 +6,17 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 14:04:51 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 14:24:16 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 16:14:09 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 
 AAnimal::AAnimal(){
+    
+}
+
+AAnimal::AAnimal(std::string tp): type(tp){
     
 }
 

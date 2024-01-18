@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 16:22:13 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 14:21:20 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 16:13:10 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Dog::Dog(std::string tp): br(new Brain){
     std::cout << "Dog param Contructor called" << std::endl;
 }
 
-Dog::Dog(): br(new Brain){
+Dog::Dog(): AAnimal("Dog"), br(new Brain){
     std::cout << "Param constructor called" << std::endl;
 }
 
@@ -27,19 +27,15 @@ Dog::~Dog(){
 }
 
 Dog::Dog(const Dog& other){
-    keep = this->br;
-    this->br = other.br;
-    this->type = other.type;
-    delete keep;
+    this->br = NULL;
+    *this = other;
     std::cout << "Dog Copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& obj){
     if (this != &obj){
-        keep = this->br;
-        this->br = obj.br;
-        this->type = obj.type;
-        delete keep;
+        delete this->br;
+        this->br = new Brain(*obj.br);
     }
     std::cout << "Dog Copy assignment operator called" << std::endl;
     return *this;

@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:55:16 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/16 18:04:18 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 15:47:47 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 class Character: public ICharacter{
     private:
         std::string name;
-        AMateria *unequipedMateria;
         AMateria* inve[4];
     public:
         Character();

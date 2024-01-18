@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 14:33:44 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 12:58:24 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 17:21:11 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-void f(){
-    system("leaks Brain");
-}
-
 int main()
 {
-    atexit(f);
+
+    Cat *an = new Cat();
+    Cat hh(*an);
+    delete an;
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    delete j;//should not create a leak
+    delete j;
     delete i;
     return 0;
 }

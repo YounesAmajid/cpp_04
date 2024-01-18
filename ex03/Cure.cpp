@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 21:08:54 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 11:17:12 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 15:47:17 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ Cure& Cure::operator=(const Cure& other){
 }
 
 Cure* Cure::clone() const{
-    Cure* tmp = new Cure();
-    return tmp;
+   return new Cure();
 }
 
 std::string const & Cure::getType() const

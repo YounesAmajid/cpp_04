@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 17:54:51 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/16 20:30:45 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 15:45:14 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 class MateriaSource: public IMateriaSource{
     private:
         AMateria* src[4];
-        AMateria *unequipedMate;
     public:
         MateriaSource();
         MateriaSource(const MateriaSource& obj);

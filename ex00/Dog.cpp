@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 16:22:13 by yamajid           #+#    #+#             */
-/*   Updated: 2024/01/17 12:06:39 by yamajid          ###   ########.fr       */
+/*   Updated: 2024/01/17 15:16:00 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Dog::Dog(std::string tp): Animal(tp){
     std::cout << "Dog param Contructor called" << std::endl;
 }
 
-Dog::Dog(){
+Dog::Dog(): Animal("Dog"){
     std::cout << "Dog Destructor called" << std::endl;
 }
 
